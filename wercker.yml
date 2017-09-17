@@ -21,6 +21,13 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     - script:
-        name: echo
+        name: file create
         code: |
-          echo "hello world!"
+          echo "hello world!" > ${WERCKER_OUTPUT_DIR}/test.log
+
+deploy:
+  steps:
+    - script:
+        name: cat
+        code: |
+          cat ${WERCKER_OUTPUT_DIR}/test.log
