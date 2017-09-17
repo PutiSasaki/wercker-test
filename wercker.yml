@@ -28,6 +28,6 @@ build:
 deploy:
   steps:
     - script:
-        name: cat
+        name: echo
         code: |
-          cat ${WERCKER_OUTPUT_DIR}/test.log
+          echo ${TEST}
